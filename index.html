@@ -14,21 +14,16 @@
             margin: 0;
         }
 
-        /* --- NAVBAR & LOGO --- */
-        .navbar-brand img {
-            height: 65px;
-        }
-
-        footer {
-            padding: 15px;
+        footer{
+            align-items: center;
             text-align: center;
             background-color: #22ccee;
-            color: white;
         }
 
-        /* --- SLIDER --- */
         .slider-container {
-            width: 100%;
+            max-width: 100%; 
+            height: 60%;
+            margin: 0 auto 30px auto; 
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -40,6 +35,9 @@
         .slides img {
             width: 25%;
             height: auto;
+            display: block;
+            margin: 0;
+            padding: 0;
         }
 
         @keyframes slide {
@@ -48,102 +46,201 @@
             66%, 91% { margin-left: -200%; } 
             100% { margin-left: -300%; } 
         }
-
-        /* --- PERBAIKAN BANNER LEBAH (SOLUSI UTAMA) --- */
-        .banner-container, .banner-container2, .banner-container3 {
+        
+        section {
+            padding: 40px 0;
+        }
+        
+        .flight-info-card {
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f4f4f4;
+        }
+        .route {
+            font-size: 1.5rem;
+            font-weight: bold;
             display: flex;
-            flex-wrap: wrap; /* Bikin konten bisa turun ke bawah di HP */
+            justify-content: center;
             align-items: center;
-            background-color: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            min-height: auto; /* Hapus fixed height */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .separator {
+            margin: 0 10px;
+            font-size: 1.2rem;
+            color: #0d6efd;
+        }
+        .rec-place ol {
+            padding-left: 20px;
+            text-align: left;
         }
 
-        /* Container untuk Gambar Lebah */
-        .lebah-image {
-            flex: 1;
-            min-width: 50%; /* Setengah layar di desktop */
-            height: 500px;
-            background-size: contain; /* Gambar mengecil utuh, ga bakal kepotong */
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color: #fff;
-        }
-
-        /* Container untuk Teks */
-        .teks-konten, .teks-konten2, .teks-konten3 {
-            flex: 1;
-            min-width: 50%;
-            padding: 40px;
-            width: auto; /* Reset width 50% yang lama */
-            margin-right: 0;
-        }
-
-        /* --- GRID WISATA --- */
-        .container-flex {
+        .banner-container {
+            background-image: url('thailandlebah.png'); 
+            background-size: cover;
+            background-position: left center;
+            height: 600px;
+            width: 100%;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .kolom {
-            flex: 1;
-            min-width: 300px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            border-radius: 8px;
-        }
-        .kolom img {
-            width: 100%; 
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
+            justify-content: flex-end;
+            align-items: center;
         }
 
-        /* --- MEMBER --- */
-        .kolom1 {
-            flex: 1;
-            min-width: 180px;
-            padding: 15px;
-            text-align: center;
+        .teks-konten {
+            width: 50%;
+            padding: 30px; 
+            color: #333;
         }
-        .kolom1 img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 50%;
+
+        .teks-konten h2 {
+            font-size: 2.5em;
             margin-bottom: 10px;
         }
 
-        /* --- RESPONSIVE FIX (LAYAR HP) --- */
-        @media (max-width: 768px) {
-            .lebah-image {
-                min-width: 100%; /* Gambar full lebar di atas */
-                height: 250px; /* Di HP, tingginya mengecil otomatis */
-                background-position: center;
-            }
-            .teks-konten, .teks-konten2, .teks-konten3 {
-                min-width: 100%; /* Teks pindah ke bawah gambar */
-                padding: 20px;
-                text-align: center;
-            }
-            .container-flex {
-                flex-direction: column;
-            }
+        .teks-konten p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .banner-container2 {
+            background-image: url('lebahfilipin.png'); 
+            background-size: cover;
+            background-position: left center;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .teks-konten2 {
+            width: 50%;
+            padding: 30px; 
+            color: #333;
+        }
+
+        .teks-konten2 h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .teks-konten2 p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .banner-container3 {
+            background-image: url('lebahsingapore.png'); 
+            background-size: cover;
+            background-position: left center;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .teks-konten3 {
+            width: 50%;
+            padding: 30px; 
+            color: #333;
+        }
+
+        .teks-konten3 h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .teks-konten3 p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .content-area {
+            padding: 20px 50px;
+        }
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+        
+        /* --- TIGA KOLOM PERJALANAN (SAME WIDTH & EQUAL HEIGHT) --- */
+        .container-flex {
+            display: flex;
+            gap: 20px;
+        }
+        .kolom {
+            /* LEBAR SAMA: Flex: 1 memastikan setiap kolom mendapat 1/3 bagian */
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ccc;
+            /* Tambahan visual agar kolom terlihat terpisah */
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px; 
+            /* TINGGI SAMA: Flexbox secara default akan membuat tinggi kolom sama dengan yang tertinggi (sangat penting untuk tata letak 3 kolom) */
+        }
+        /* Gambar di dalam kolom dibuat proporsional untuk tampilan laptop */
+        .kolom img {
+            width: 100%; 
+            height: 12vw; /* Tinggi proporsional agar gambar terlihat konsisten */
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        /* --- END TIGA KOLOM --- */
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            width: 120px;
+            padding: 5px;
+            margin-right: 10px;
+            background-color: #e91e63;
+            color: white;
+            text-align: center;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .stat-value {
+            padding: 5px;
+            font-weight: normal;
+            color: #333;
+            font-size: 0.9em;
+        }
+        .container-flex {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .kolom1 {
+            flex: 1 0 0; 
+            padding: 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .kolom1 img{
+            width: 5cm;
+            height: 5cm;
         }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#"><img src="logoacevel.png" alt="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand fw-bold" href="#"><img src="logoacevel.png" alt="logo" height="65px" width="175px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#singapore">Singapore</a></li>
@@ -157,90 +254,193 @@
     
     <div class="slider-container">
         <div class="slides">
-            <img src="1.png" alt="Travel 1">
-            <img src="2.png" alt="Travel 2">
-            <img src="3.png" alt="Travel 3">
-            <img src="4.png" alt="Travel 4">
+            <img src="1.png" alt="Travel Image 1">
+            <img src="2.png" alt="Travel Image 2">
+            <img src="3.png" alt="Travel Image 3">
+            <img src="4.png" alt="Travel Image 4">
         </div>
     </div>
     
-    <main class="container">
-        <!-- SINGAPORE -->
-        <section id="singapore">
-            <div class="banner-container3">
-                <div class="lebah-image" style="background-image: url('lebahsingapore.png');"></div>
-                <div class="teks-konten3">
-                    <h2 class="text-info">Singapore</h2>
-                    <h5 class="text-primary">Highlight</h5>
-                    <p>Singapore is a prosperous island city-state in Southeast Asia, known for its strategic location, bustling port, and multicultural society.</p>
-                    <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="singapore">Details & Flight Info</button>
-                </div>
+    <section id="singapore" class="container">
+        <div class="banner-container3">
+        <div class="teks-konten3">
+        <h2 class="text-center mb-4 text-info">Singapore</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h5 class="text-primary">Highlight</h5>
+                <p>Singapore is a prosperous island city-state in Southeast Asia, known for its strategic location, bustling port, and multicultural society. It has a high-income economy built on strong manufacturing and financial sectors, and has achieved high standards of living since becoming independent in 1965. The country is a global hub for trade and business and is composed of one main island and many smaller ones.</p>
+                <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" 
+                        data-country="singapore">
+                    Details & Flight Info
+                </button>
             </div>
-            <div class="container-flex">
-                <div class="kolom"><img src="rain-vortex.jpg"><h5>HSBC Rain Vortex</h5><p>The world's tallest indoor waterfall.</p></div>
-                <div class="kolom"><img src="butterflygarden.jpg"><h5>Butterfly Garden</h5><p>Lush garden with 40 species of butterflies.</p></div>
-                <div class="kolom"><img src="changiexperiencestudio.jpg"><h5>Experience Studio</h5><p>Airport history through fun games.</p></div>
             </div>
-        </section>
+        </div>
+        </div>
+        <div class="container-flex">
+            <div class="kolom">
+                <img src="rain-vortex.jpg" alt="rainvortex">
+                <h5>HSBC Rain Vortex & Shiseido Forest Valley</h5>
+                <p><strong>Description:</strong> The world's tallest indoor waterfall (HSBC Rain Vortex) surrounded by a beautiful multi-level indoor forest (Shiseido Forest Valley). The view is spectacular during the day and even more breathtaking at night with light and music shows.</p>
+                <p><strong>Location:</strong> Jewel Changi Airport (connected to Terminals 1, 2, and 3).</p>
+                <p><strong>Operating Hours:</strong> This area is generally accessible 24 hours a day.</p>
+                <p><strong>Rating:</strong> 4,8 Stars</p>
+            </div>
+            <div class="kolom">
+                <img src="butterflygarden.jpg" alt="butterflygarden">
+                <h5>Butterfly Garden</h5>
+                <p><strong>Description:</strong> A lush garden with more than 40 species of butterflies, a cave waterfall, and various tropical plants. It is a peaceful place to relax.</p>
+                <p><strong>Location:</strong> Transit Area, Terminal 3, Levels 2 and 3.</p>
+                <p><strong>Operating Hours:</strong> Open 24 hours.</p>
+                <p><strong>Rating:</strong> 4.5 stars.</p>
+            </div>
+            <div class="kolom">
+                <img src="changiexperiencestudio.jpg" alt="changiexperiencestudio">
+                <h5>Changi Experience Studio</h5>
+                <p><strong>Description:</strong> This studio presents an exhibition on the history and operations of Changi Airport through a variety of fun games and digital simulations. Suitable for all ages.</p>
+                <p><strong>Location:</strong> Jewel Changi Airport.</p>
+                <p><strong>Opening Hours:</strong> Approximately 11:00 AM–8:00 PM (it is recommended to check the official website for the latest operating hours).</p>
+                <p><strong>Rating:</strong> 4.8 stars.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- PHILIPPINES -->
-        <section id="philippine">
-            <div class="banner-container2">
-                <div class="lebah-image" style="background-image: url('lebahfilipin.png');"></div>
-                <div class="teks-konten2">
-                    <h2 class="text-info">Philippines</h2>
-                    <h5 class="text-primary">Highlight</h5>
-                    <p>The Philippines is an archipelagic country comprised of over 7,000 islands with a diverse culture.</p>
-                    <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="philippine">Details & Flight Info</button>
-                </div>
+    <section id="philippine" class="container bg-light">
+        <div class="banner-container2">
+        <div class="teks-konten2">
+        <h2 class="text-center mb-4 text-info">Philippines</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h5 class="text-primary">Highlight</h5>
+                <p>The Philippines is a Southeast Asian archipelagic country in the western Pacific Ocean, comprised of over 7,000 islands divided into three major island groups: Luzon, Visayas, and Mindanao. It is a republic with a mixed economy, a diverse culture shaped by indigenous, Spanish, and American influences, and a population of over 112 million. The capital is Manila.</p>
+                <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" 
+                        data-country="philippine">
+                    Details & Flight Info
+                </button>
             </div>
-            <div class="container-flex">
-                <div class="kolom"><img src="rizalpark.jpg"><h5>Rizal Park</h5><p>Park dedicated to José Rizal.</p></div>
-                <div class="kolom"><img src="fort-santiago.jpg"><h5>Fort Santiago</h5><p>Historic fortress within Intramuros.</p></div>
-                <div class="kolom"><img src="SMmallofasia.jpg"><h5>SM Mall of Asia</h5><p>One of the largest malls in the world.</p></div>
             </div>
-        </section>
+        </div>    
+        </div>
+         <div class="container-flex">
+            <div class="kolom">
+                <img src="rizalpark.jpg" alt="rizalpark">
+                <h5>Rizal Park</h5>
+                <p><strong>Description:</strong> A 58-hectare park dedicated to José Rizal, the national hero. The park offers green open spaces for relaxation, walking trails, beautiful gardens, and soothing fountains. It is the perfect choice for spending time outdoors.</p>
+                <p><strong>Location:</strong> Ermita, Manila (near Fort Santiago).</p>
+                <p><strong>Operating Hours:</strong> Generally 5:00 a.m.–8:00 p.m.</p>
+                <p><strong>Rating:</strong> 4.5 stars.</p>
+            </div>
+            <div class="kolom">
+                <img src="fort-santiago.jpg" alt="fortsantiago">
+                <h5>Fort Santiago (Intramuros)</h5>
+                <p><strong>Description:</strong> A historic defensive fortress within the walled city of Intramuros. The fortress houses a museum commemorating Philippine national hero José Rizal, who was imprisoned here before his execution. Intramuros as a whole (including Casa Manila and San Agustin Church) is a destination rich in history and can be explored by tricycle or on foot.</p>
+                <p><strong>Location:</strong> Intramuros, Manila (about a 30-45 minute drive from NAIA, depending on traffic).</p>
+                <p><strong>Operating Hours:</strong> 8:00 a.m.–11:00 p.m.</p>
+                <p><strong>Rating:</strong> 4.5 stars.</p>
+            </div>
+            <div class="kolom">
+                <img src="SMmallofasia.jpg" alt="smmallofasia">
+                <h5>SM Mall of Asia (MOA)</h5>
+                <p><strong>Description:</strong> SM Mall of Asia is one of the largest shopping malls in the world, offering almost everything from boutiques to electronics stores. The area also features an ice rink and an IMAX theater.</p>
+                <p><strong>Location:</strong> Pasay City (in the Bay City area).</p>
+                <p><strong>Opening Hours:</strong> 10:00 a.m. to 10:00 p.m.</p>
+                <p><strong>Rating:</strong> 4.5–4.6 stars.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- THAILAND -->
-        <section id="thailand">
-            <div class="banner-container">
-                <div class="lebah-image" style="background-image: url('thailandlebah.png');"></div>
-                <div class="teks-konten">
-                    <h2 class="text-info">Thailand</h2>
-                    <h5 class="text-primary">Highlight</h5>
-                    <p>Thailand is famous for its vibrant culture, amazing street food, and stunning landscapes.</p>
-                    <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="thailand">Details & Flight Info</button>
-                </div>
+    <section id="thailand" class="container">
+        <div class="banner-container">
+        <div class="teks-konten">
+        <h2 class="text-center mb-4 text-info">Thailand</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h5 class="text-primary">Highlight</h5>
+                <p>Thailand is a constitutional monarchy in Southeast Asia with a capital in Bangkok, known for its vibrant culture, delicious food, and stunning landscapes. It is bordered by Myanmar, Laos, Cambodia, and Malaysia, and has a diverse geography ranging from mountains to beaches. Officially named the Kingdom of Thailand, it is the only Southeast Asian nation that was never colonized.</p>
+                <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" 
+                        data-country="thailand">
+                    Details & Flight Info
+                </button>
             </div>
-            <div class="container-flex">
-                <div class="kolom"><img src="the erawan museum.jpg"><h5>The Erawan Museum</h5><p>Giant three-headed bronze elephant.</p></div>
-                <div class="kolom"><img src="the ancient city.jpg"><h5>The Ancient City</h5><p>World's largest open-air museum.</p></div>
-                <div class="kolom"><img src="latkrabangpark.jpeg"><h5>Lat Krabang Park</h5><p>Ideal city park for walking and jogging.</p></div>
             </div>
-        </section>
+        </div>    
+        </div>
 
-        <!-- MEMBER SECTION -->
-        <section id="member">
-            <h2 class="text-center mb-4">Our Team</h2>
-            <div class="container-flex justify-content-center">
-                <div class="kolom1"><img src="zahrak.jpg"><p><strong>Zahra Nadia</strong><br>Translator</p></div>
-                <div class="kolom1"><img src="fidelk.jpg"><p><strong>Fidelia Belisya</strong><br>Researcher</p></div>
-                <div class="kolom1"><img src="aisyahK.jpg"><p><strong>'Aisyah Mufidatul</strong><br>Leader</p></div>
-                <div class="kolom1"><img src="amirak.jpg"><p><strong>Amira Nayla</strong><br>Programmer</p></div>
-                <div class="kolom1"><img src="afifahk.jpeg"><p><strong>Afifah Khoirun</strong><br>Designer</p></div>
+         <div class="container-flex">
+            <div class="kolom">
+                <img src="the erawan museum.jpg" alt="theerawanmuseum">
+                <h5>The Erawan Museum</h5>
+                <p><strong>Description:</strong> The Erawan Museum is famous for its giant three-headed bronze elephant statue, placed atop a charming museum building. The museum has three floors representing the three realms of the universe, each displaying beautiful Thai cultural and religious artifacts. Its fantastic architecture makes it a very photogenic place.</p>
+                <p><strong>Location:</strong> Samut Prakan (about a 30-45 minute drive from the airport).</p>
+                <p><strong>Operating Hours:</strong> 9:00 a.m.–6:00 p.m.</p>
+                <p><strong>Rating:</strong> 4.5 stars.</p>
             </div>
-        </section>
-    </main>
+            <div class="kolom">
+                <img src="the ancient city.jpg" alt="theancientcity">
+                <h5>The Ancient City (Muang Boran)</h5>
+                <p><strong>Description:</strong> Known as the world's largest open-air museum, Muang Boran contains replicas of Thailand's most famous historical buildings, temples, and monuments, either in their original size or scaled down. It's an amazing way to see various Thai landmarks in one place.</p>
+                <p><strong>Location:</strong> About 30-45 minutes drive from Suvarnabhumi Airport.</p>
+                <p><strong>Operating Hours:</strong> 09:00–19:00.</p>
+                <p><strong>Rating:</strong> 4.5 stars.</p>
+            </div>
+            <div class="kolom">
+                <img src="latkrabangpark.jpeg" alt="latkrabangpark">
+                <h5>Lat Krabang Park (Suan Phra Nakhon)</h5>
+                <p><strong>Description:</strong> An ideal city park for walking, jogging, or simply enjoying the fresh air. This place is perfect if you just want to get away from the airport atmosphere for a while and do some light activities.</p>
+                <p><strong>Location:</strong> Lat Krabang area, quite close to the airport.</p>
+                <p><strong>Opening Hours:</strong> 5:00 AM–9:00 PM.</p>
+                <p><strong>Rating:</strong> 4.4 stars.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- MODAL -->
-    <div class="modal fade" id="countryModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+    <section id="member">
+        <div class="container-flex">
+            <div class="kolom1">
+                <img src="zahrak.jpg" alt="zahra">
+                <p><strong>Name: </strong>Zahra Nadia Putri</p>
+                <p><strong>Age: </strong>???</p>
+                <p><strong>Role: </strong>Translator</p>
+            </div>
+            <div class="kolom1">
+                <img src="fidelk.jpg" alt="fidel">
+                <p><strong>Name: </strong>Fidelia Belisya Kurniantoro</p>
+                <p><strong>Age: </strong>???</p>
+                <p><strong>Role: </strong>Researcher</p>
+            </div>
+            <div class="kolom1">
+                <img src="aisyahK.jpg" alt="aisyah">
+                <p><strong>Name: </strong>'Aisyah Mufidatul Yusra</p>
+                <p><strong>Age: </strong>???</p>
+                <p><strong>Role: </strong>Project Team Leader</p>
+            </div>
+            <div class="kolom1">
+                <img src="amirak.jpg" alt="amira">
+                <p><strong>Name: </strong>Amira Nayla Hafisa</p>
+                <p><strong>Age: </strong>???</p>
+                <p><strong>Role: </strong>Progammer</p>
+            </div>
+            <div class="kolom1">
+                <img src="afifahk.jpeg" alt="afifah">
+                <p><strong>Name: </strong>Afifah Khoirunnisa</p>
+                <p><strong>Age: </strong>???</p>
+                <p><strong>Role: </strong>Graphic Designer</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-info text-white">
                     <h5 class="modal-title" id="countryModalLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="modalBodyContent"></div>
+                <div class="modal-body" id="modalBodyContent">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
@@ -248,22 +448,122 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const countryData = {
-            'singapore': { name: 'Singapore', details: 'Currency: SGD', flight: 'CGK ✈ SIN (IDR 2.5jt - 5jt)' },
-            'philippine': { name: 'Philippines', details: 'Currency: PHP', flight: 'CGK ✈ MNL (IDR 1.6jt - 10jt)' },
-            'thailand': { name: 'Thailand', details: 'Currency: THB', flight: 'CGK ✈ BKK (IDR 3jt - 8jt)' }
+            'singapore': {
+                name: 'Singapore',
+                details: `
+                    <ul>
+                        <li><strong>Official name:</strong> Republic of Singapore</li>
+                        <li><strong>Location:</strong> Southeast Asia, near Malaysia</li>
+                        <li><strong>State structure:</strong> City-state (small but highly developed)</li>
+                        <li><strong>Capital:</strong> Singapore</li>
+                        <li><strong>Official languages:</strong> English, Malay, Mandarin, Tamil</li>
+                        <li><strong>Currency:</strong> Singapore Dollar (SGD)</li>
+                        <li><strong>Characteristics:</strong> Super clean, strict regulations, well-organized public transportation</li>
+                    </ul>
+                `,
+                flight: {
+                    from: 'Soekarno-Hatta International Airport (CGK)',
+                    to: 'Singapore Changi International Airport (SIN)',
+                    price: 'IDR 2,500,000 - IDR 5,000,000 (economy)',
+                    places: [
+                        'HSBS Rain Vortex & Shiseido Forest Valley',
+                        'Changi Experience Studio',
+                        'Butterfly Garden'
+                    ]
+                }
+            },
+            'philippine': {
+                name: 'Philippines',
+                details: `
+                    <ul>
+                        <li><strong>Official name:</strong> Republic of the Philippines</li>
+                        <li><strong>Location:</strong> Southeast Asia</li>
+                        <li><strong>Capital:</strong> Manila</li>
+                        <li><strong>State:</strong> Republic</li>
+                        <li><strong>Official languages:</strong> Filipino and English</li>
+                        <li><strong>Currency:</strong> Philippine Peso (PHP)</li>
+                        <li><strong>Characteristics:</strong> Island nation, mixed Asian-Western culture</li>
+                        <li><strong>Economy:</strong> Services, remittances from overseas workers, industry</li>
+                    </ul>
+                `,
+                flight: {
+                    from: 'Soekarno-Hatta International Airport (CGK)',
+                    to: 'Ninoy Aquino International Airport (MNL)',
+                    price: 'IDR 1,670,000 - IDR 10,000,000',
+                    places: [
+                        'Fort Santiago',
+                        'Rizal Park',
+                        'SM Mall of Asia (MOA)'
+                    ]
+                }
+            },
+            'thailand': {
+                name: 'Thailand',
+                details: `
+                    <ul>
+                        <li><strong>Official name:</strong> Kingdom of Thailand</li>
+                        <li><strong>Location:</strong> Southeast Asia</li>
+                        <li><strong>Capital:</strong> Bangkok / กรุงเทพฯ</li>
+                        <li><strong>Government System:</strong> Monarchy</li>
+                        <li><strong>Official Language:</strong> Thai</li>
+                        <li><strong>Currency:</strong> Baht (THB)</li>
+                        <li><strong>Characteristics:</strong> Strong royal culture, spicy food, tourist-friendly</li>
+                        <li><strong>Economy:</strong> Tourism, agriculture, industry</li>
+                    </ul>
+                `,
+                flight: {
+                    from: 'Soekarno-Hatta International Airport (CGK)',
+                    to: 'Suvarnabhumi International Airport (BKK)',
+                    price: 'IDR 3,000,000 - IDR 8,000,000 (economy)',
+                    places: [
+                        'Lat Krabang Park (Suan Phra Nakhon)',
+                        'The Ancient City (Muang Boran)',
+                        'The Erawan Museum'
+                    ]
+                }
+            }
         };
 
-        const modal = document.getElementById('countryModal');
-        modal.addEventListener('show.bs.modal', event => {
-            const btn = event.relatedTarget;
-            const data = countryData[btn.getAttribute('data-country')];
-            document.getElementById('countryModalLabel').textContent = data.name;
-            document.getElementById('modalBodyContent').innerHTML = `<p>${data.details}</p><p class="fw-bold">${data.flight}</p>`;
+        const countryModal = document.getElementById('countryModal');
+        const modalTitle = document.getElementById('countryModalLabel');
+        const modalBody = document.getElementById('modalBodyContent');
+
+        countryModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget;
+            const countryKey = button.getAttribute('data-country');
+            const data = countryData[countryKey];
+
+            if (!data) return;
+
+            modalTitle.textContent = `${data.name} - Travel Information`;
+
+            const recommendedPlaces = data.flight.places.map(place => `<li>${place}</li>`).join('');
+
+            modalBody.innerHTML = `
+                <h4><i class="fas fa-info-circle me-2"></i>General Details</h4>
+                ${data.details}
+                
+                <h4 class="mt-4"><i class="fas fa-plane me-2"></i>Flight Info (January 2026)</h4>
+                <div class="flight-info-card text-center">
+                    <p class="mb-1">Flights from: <strong>${data.flight.from}</strong></p>
+                    <div class="route text-center">
+                        <span>${data.flight.from.match(/\(([^)]+)\)/)[1]}</span>
+                        <span class="separator">✈️</span>
+                        <span>${data.flight.to.match(/\(([^)]+)\)/)[1]}</span>
+                    </div>
+                    <p class="mb-2">To: <strong>${data.flight.to}</strong></p>
+                    <p class="fw-bold text-danger">Ticket Price: ${data.flight.price}</p>
+                </div>
+
+                <h4 class="mt-4">Recommended Places near Airport / City</h4>
+                <div class="rec-place">
+                    <ol>${recommendedPlaces}</ol>
+                </div>
+            `;
         });
     </script>
-
-    <footer>
-        <small>Copyright &copy; 2026 Acevel Team</small>
-    </footer>
 </body>
+<footer>
+    <small>Copyright &copy; 2026</small>
+</footer>
 </html>
