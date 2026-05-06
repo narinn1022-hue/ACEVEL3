@@ -14,9 +14,16 @@
             margin: 0;
         }
 
-        /* --- BAGIAN NAVBAR --- */
+        /* --- NAVBAR & LOGO --- */
         .navbar-brand img {
-            height: 50px;
+            height: 65px;
+        }
+
+        footer {
+            padding: 15px;
+            text-align: center;
+            background-color: #22ccee;
+            color: white;
         }
 
         /* --- SLIDER --- */
@@ -42,175 +49,153 @@
             100% { margin-left: -300%; } 
         }
 
-        /* --- PERBAIKAN SEKSI "LEBAH" (SINGAPORE, PHILIPPINES, THAILAND) --- */
-        .banner-section {
-            background-color: #fff;
-            min-height: 500px;
+        /* --- PERBAIKAN BANNER LEBAH (SOLUSI UTAMA) --- */
+        .banner-container, .banner-container2, .banner-container3 {
             display: flex;
+            flex-wrap: wrap; /* Bikin konten bisa turun ke bawah di HP */
             align-items: center;
-            background-size: contain; /* Gambar lebah tidak akan terpotong */
-            background-repeat: no-repeat;
-            background-position: left center;
+            background-color: #fff;
             border-radius: 15px;
-            margin-bottom: 40px;
             overflow: hidden;
-            border: 1px solid #eee;
+            margin-bottom: 30px;
+            min-height: auto; /* Hapus fixed height */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .teks-konten-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end; /* Teks default di kanan */
+        /* Container untuk Gambar Lebah */
+        .lebah-image {
+            flex: 1;
+            min-width: 50%; /* Setengah layar di desktop */
+            height: 500px;
+            background-size: contain; /* Gambar mengecil utuh, ga bakal kepotong */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #fff;
+        }
+
+        /* Container untuk Teks */
+        .teks-konten, .teks-konten2, .teks-konten3 {
+            flex: 1;
+            min-width: 50%;
             padding: 40px;
+            width: auto; /* Reset width 50% yang lama */
+            margin-right: 0;
         }
 
-        .teks-box {
-            width: 50%; /* Di desktop ambil setengah layar */
-            background-color: rgba(255, 255, 255, 0.9); /* Background semi-transparan agar aman dari gambar lebah */
-            padding: 30px;
-            border-radius: 12px;
-        }
-
-        /* --- KOLOM WISATA --- */
+        /* --- GRID WISATA --- */
         .container-flex {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            margin-bottom: 50px;
+            margin-top: 20px;
         }
         .kolom {
             flex: 1;
-            min-width: 280px;
+            min-width: 300px;
             padding: 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 8px;
         }
         .kolom img {
-            width: 100%;
+            width: 100%; 
             height: 200px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
+            border-radius: 4px;
         }
 
         /* --- MEMBER --- */
-        .kolom-member {
+        .kolom1 {
             flex: 1;
             min-width: 180px;
+            padding: 15px;
             text-align: center;
-            padding: 20px;
-            background: #eee;
-            border-radius: 10px;
         }
-        .kolom-member img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
+        .kolom1 img {
+            width: 120px;
+            height: 120px;
             object-fit: cover;
+            border-radius: 50%;
             margin-bottom: 10px;
         }
 
-        /* --- MODAL --- */
-        .flight-info-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            border-left: 5px solid #0dcaf0;
-        }
-
-        /* --- MEDIA QUERY: SAAT LAYAR DIPERKECIL (HP) --- */
-        @media (max-width: 992px) {
-            .banner-section {
-                background-position: top center; /* Gambar lebah pindah ke atas */
-                background-size: cover;
-                flex-direction: column;
-                justify-content: flex-start;
+        /* --- RESPONSIVE FIX (LAYAR HP) --- */
+        @media (max-width: 768px) {
+            .lebah-image {
+                min-width: 100%; /* Gambar full lebar di atas */
+                height: 250px; /* Di HP, tingginya mengecil otomatis */
+                background-position: center;
             }
-            .teks-konten-wrapper {
-                justify-content: center;
+            .teks-konten, .teks-konten2, .teks-konten3 {
+                min-width: 100%; /* Teks pindah ke bawah gambar */
                 padding: 20px;
-                margin-top: 150px; /* Memberi ruang agar gambar lebah di atas kelihatan */
-            }
-            .teks-box {
-                width: 95%; /* Teks memenuhi layar */
                 text-align: center;
-                box-shadow: 0 -10px 20px rgba(0,0,0,0.1);
             }
-        }
-
-        footer {
-            padding: 20px;
-            text-align: center;
-            background-color: #0dcaf0;
-            color: white;
-            margin-top: 50px;
+            .container-flex {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#"><img src="logoacevel.png" alt="Acevel"></a>
+            <a class="navbar-brand fw-bold" href="#"><img src="logoacevel.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#singapore">Singapore</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#philippine">Philippines</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#philippine">Philippine</a></li>
                     <li class="nav-item"><a class="nav-link" href="#thailand">Thailand</a></li>
                     <li class="nav-item"><a class="nav-link" href="#member">Member</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    
     <div class="slider-container">
         <div class="slides">
-            <img src="1.png" alt="S1">
-            <img src="2.png" alt="S2">
-            <img src="3.png" alt="S3">
-            <img src="4.png" alt="S4">
+            <img src="1.png" alt="Travel 1">
+            <img src="2.png" alt="Travel 2">
+            <img src="3.png" alt="Travel 3">
+            <img src="4.png" alt="Travel 4">
         </div>
     </div>
-
+    
     <main class="container">
-        
         <!-- SINGAPORE -->
         <section id="singapore">
-            <div class="banner-section" style="background-image: url('lebahsingapore.png');">
-                <div class="teks-konten-wrapper">
-                    <div class="teks-box">
-                        <h2 class="text-info">Singapore</h2>
-                        <h5 class="text-secondary">Highlight</h5>
-                        <p>Singapore is a prosperous island city-state in Southeast Asia, known for its strategic location and multicultural society.</p>
-                        <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="singapore">Flight Info</button>
-                    </div>
+            <div class="banner-container3">
+                <div class="lebah-image" style="background-image: url('lebahsingapore.png');"></div>
+                <div class="teks-konten3">
+                    <h2 class="text-info">Singapore</h2>
+                    <h5 class="text-primary">Highlight</h5>
+                    <p>Singapore is a prosperous island city-state in Southeast Asia, known for its strategic location, bustling port, and multicultural society.</p>
+                    <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="singapore">Details & Flight Info</button>
                 </div>
             </div>
             <div class="container-flex">
                 <div class="kolom"><img src="rain-vortex.jpg"><h5>HSBC Rain Vortex</h5><p>The world's tallest indoor waterfall.</p></div>
-                <div class="kolom"><img src="butterflygarden.jpg"><h5>Butterfly Garden</h5><p>40 species of butterflies in Terminal 3.</p></div>
-                <div class="kolom"><img src="changiexperiencestudio.jpg"><h5>Experience Studio</h5><p>Fun airport history games.</p></div>
+                <div class="kolom"><img src="butterflygarden.jpg"><h5>Butterfly Garden</h5><p>Lush garden with 40 species of butterflies.</p></div>
+                <div class="kolom"><img src="changiexperiencestudio.jpg"><h5>Experience Studio</h5><p>Airport history through fun games.</p></div>
             </div>
         </section>
 
         <!-- PHILIPPINES -->
         <section id="philippine">
-            <div class="banner-section" style="background-image: url('lebahfilipin.png');">
-                <div class="teks-konten-wrapper">
-                    <div class="teks-box">
-                        <h2 class="text-info">Philippines</h2>
-                        <h5 class="text-secondary">Highlight</h5>
-                        <p>The Philippines is an archipelagic country comprised of over 7,000 islands with a diverse culture.</p>
-                        <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="philippine">Flight Info</button>
-                    </div>
+            <div class="banner-container2">
+                <div class="lebah-image" style="background-image: url('lebahfilipin.png');"></div>
+                <div class="teks-konten2">
+                    <h2 class="text-info">Philippines</h2>
+                    <h5 class="text-primary">Highlight</h5>
+                    <p>The Philippines is an archipelagic country comprised of over 7,000 islands with a diverse culture.</p>
+                    <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="philippine">Details & Flight Info</button>
                 </div>
             </div>
             <div class="container-flex">
-                <div class="kolom"><img src="rizalpark.jpg"><h5>Rizal Park</h5><p>58-hectare park dedicated to José Rizal.</p></div>
+                <div class="kolom"><img src="rizalpark.jpg"><h5>Rizal Park</h5><p>Park dedicated to José Rizal.</p></div>
                 <div class="kolom"><img src="fort-santiago.jpg"><h5>Fort Santiago</h5><p>Historic fortress within Intramuros.</p></div>
                 <div class="kolom"><img src="SMmallofasia.jpg"><h5>SM Mall of Asia</h5><p>One of the largest malls in the world.</p></div>
             </div>
@@ -218,43 +203,41 @@
 
         <!-- THAILAND -->
         <section id="thailand">
-            <div class="banner-section" style="background-image: url('thailandlebah.png');">
-                <div class="teks-konten-wrapper">
-                    <div class="teks-box">
-                        <h2 class="text-info">Thailand</h2>
-                        <h5 class="text-secondary">Highlight</h5>
-                        <p>Thailand is famous for its vibrant culture, amazing street food, and stunning historical temples.</p>
-                        <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="thailand">Flight Info</button>
-                    </div>
+            <div class="banner-container">
+                <div class="lebah-image" style="background-image: url('thailandlebah.png');"></div>
+                <div class="teks-konten">
+                    <h2 class="text-info">Thailand</h2>
+                    <h5 class="text-primary">Highlight</h5>
+                    <p>Thailand is famous for its vibrant culture, amazing street food, and stunning landscapes.</p>
+                    <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#countryModal" data-country="thailand">Details & Flight Info</button>
                 </div>
             </div>
             <div class="container-flex">
-                <div class="kolom"><img src="the erawan museum.jpg"><h5>Erawan Museum</h5><p>Giant three-headed bronze elephant.</p></div>
+                <div class="kolom"><img src="the erawan museum.jpg"><h5>The Erawan Museum</h5><p>Giant three-headed bronze elephant.</p></div>
                 <div class="kolom"><img src="the ancient city.jpg"><h5>The Ancient City</h5><p>World's largest open-air museum.</p></div>
-                <div class="kolom"><img src="latkrabangpark.jpeg"><h5>Lat Krabang Park</h5><p>Ideal city park for walking near airport.</p></div>
+                <div class="kolom"><img src="latkrabangpark.jpeg"><h5>Lat Krabang Park</h5><p>Ideal city park for walking and jogging.</p></div>
             </div>
         </section>
 
-        <!-- MEMBER -->
+        <!-- MEMBER SECTION -->
         <section id="member">
             <h2 class="text-center mb-4">Our Team</h2>
-            <div class="container-flex">
-                <div class="kolom-member"><img src="zahrak.jpg"><p><strong>Zahra Nadia</strong><br>Translator</p></div>
-                <div class="kolom-member"><img src="fidelk.jpg"><p><strong>Fidelia Belisya</strong><br>Researcher</p></div>
-                <div class="kolom-member"><img src="aisyahK.jpg"><p><strong>'Aisyah Mufidatul</strong><br>Leader</p></div>
-                <div class="kolom-member"><img src="amirak.jpg"><p><strong>Amira Nayla</strong><br>Programmer</p></div>
-                <div class="kolom-member"><img src="afifahk.jpeg"><p><strong>Afifah Khoirun</strong><br>Designer</p></div>
+            <div class="container-flex justify-content-center">
+                <div class="kolom1"><img src="zahrak.jpg"><p><strong>Zahra Nadia</strong><br>Translator</p></div>
+                <div class="kolom1"><img src="fidelk.jpg"><p><strong>Fidelia Belisya</strong><br>Researcher</p></div>
+                <div class="kolom1"><img src="aisyahK.jpg"><p><strong>'Aisyah Mufidatul</strong><br>Leader</p></div>
+                <div class="kolom1"><img src="amirak.jpg"><p><strong>Amira Nayla</strong><br>Programmer</p></div>
+                <div class="kolom1"><img src="afifahk.jpeg"><p><strong>Afifah Khoirun</strong><br>Designer</p></div>
             </div>
         </section>
-
     </main>
 
     <!-- MODAL -->
     <div class="modal fade" id="countryModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-info text-white">
-                    <h5 class="modal-title" id="countryModalLabel">Country Info</h5>
+                    <h5 class="modal-title" id="countryModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="modalBodyContent"></div>
@@ -265,40 +248,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const countryData = {
-            'singapore': {
-                name: 'Singapore',
-                details: 'Capital: Singapore | Currency: SGD | Language: English, Malay',
-                flight: { from: 'CGK', to: 'SIN', price: 'IDR 2.5jt - 5jt', airport: 'Changi International Airport' }
-            },
-            'philippine': {
-                name: 'Philippines',
-                details: 'Capital: Manila | Currency: PHP | Language: Filipino, English',
-                flight: { from: 'CGK', to: 'MNL', price: 'IDR 1.6jt - 10jt', airport: 'Ninoy Aquino Airport' }
-            },
-            'thailand': {
-                name: 'Thailand',
-                details: 'Capital: Bangkok | Currency: Baht (THB) | Language: Thai',
-                flight: { from: 'CGK', to: 'BKK', price: 'IDR 3jt - 8jt', airport: 'Suvarnabhumi Airport' }
-            }
+            'singapore': { name: 'Singapore', details: 'Currency: SGD', flight: 'CGK ✈ SIN (IDR 2.5jt - 5jt)' },
+            'philippine': { name: 'Philippines', details: 'Currency: PHP', flight: 'CGK ✈ MNL (IDR 1.6jt - 10jt)' },
+            'thailand': { name: 'Thailand', details: 'Currency: THB', flight: 'CGK ✈ BKK (IDR 3jt - 8jt)' }
         };
 
         const modal = document.getElementById('countryModal');
         modal.addEventListener('show.bs.modal', event => {
             const btn = event.relatedTarget;
             const data = countryData[btn.getAttribute('data-country')];
-            document.getElementById('countryModalLabel').textContent = data.name + ' Details';
-            document.getElementById('modalBodyContent').innerHTML = `
-                <p>${data.details}</p>
-                <div class="flight-info-card">
-                    <h5 class="text-primary">${data.flight.from} ✈️ ${data.flight.to}</h5>
-                    <p><strong>Airport:</strong> ${data.flight.airport}</p>
-                    <p class="text-danger"><strong>Est. Price:</strong> ${data.flight.price}</p>
-                </div>`;
+            document.getElementById('countryModalLabel').textContent = data.name;
+            document.getElementById('modalBodyContent').innerHTML = `<p>${data.details}</p><p class="fw-bold">${data.flight}</p>`;
         });
     </script>
 
     <footer>
-        <p>&copy; 2026 Acevel Team - Your easy ASEAN travel guide</p>
+        <small>Copyright &copy; 2026 Acevel Team</small>
     </footer>
 </body>
 </html>
